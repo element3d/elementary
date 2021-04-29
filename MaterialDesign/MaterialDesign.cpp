@@ -48,6 +48,11 @@ glm::vec4 MaterialDesign::GetColorFromScheme(const std::string name)
 	return glm::vec4(0);
 }
 
+const MDTheme* MaterialDesign::GetTheme()
+{
+	return &sTheme;
+}
+
 int MaterialDesign::AddOnThemeChangeCallback(OnThemeChangeCallback c) 
 {
 	int id = sOnThemeChangeCallbacks.size();

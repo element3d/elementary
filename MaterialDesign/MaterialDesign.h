@@ -24,6 +24,8 @@ public:
 	static EMDColorScheme GetColorScheme();
 	static glm::vec4 GetColorFromScheme(const std::string name);
 
+	static const MDTheme* GetTheme();
+
 public:
 	static int AddOnThemeChangeCallback(OnThemeChangeCallback c);
 	static void RemoveOnThemeChangeCallback(int id);
