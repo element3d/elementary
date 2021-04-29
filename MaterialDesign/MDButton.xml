@@ -1,0 +1,22 @@
+<Element
+  width="m: (100, 150, 200), d: (100, 100, 100)"
+  height="m: (35, 55, 70), d: (35, 35, 35)"
+  overflow="Hidden">
+
+  <Element
+    element="mRipple"
+    positionType="Absolute"
+    shapeType="Circle"
+    aspectRatio="1">
+  </Element>
+
+  <MDIcon
+    element="mIcon">
+  </MDIcon>
+
+  <Text
+    element="mLabel"
+    fontSize="m: (18, 22, 36), d: (18, 18, 18)">
+  </Text>
+
+</Element>

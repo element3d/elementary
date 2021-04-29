@@ -1,0 +1,12 @@
+<Dropdown
+  shapeType="Circle"
+  padding="m: (20, 20, 40), d: (20, 20, 20)">
+
+  <MDIcon
+    element="mIcon"
+    width="m: (20, 20, 40), d: (20, 20, 20)"
+    height="m: (20, 20, 40), d: (20, 20, 20)"
+    name="_s(more_vert)">
+  </MDIcon>
+
+</Dropdown>

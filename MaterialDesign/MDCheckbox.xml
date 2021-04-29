@@ -1,0 +1,15 @@
+<Element
+  width="m: (25, 30, 48), d: (25, 25, 25)"
+  aspectRatio="1"
+  borderSize="2"
+  borderRadius="all: 3">
+
+  <MDIcon
+    element="mIcon"
+    name="_s(done)"
+    width="m: (18, 18, 30), d: (18, 18, 18)"
+    aspectRatio="1"
+    textColor="r: 255, g: 255, b: 255">
+  </MDIcon>
+
+</Element>

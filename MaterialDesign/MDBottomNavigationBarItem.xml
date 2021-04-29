@@ -1,0 +1,19 @@
+<Element
+  height="100%"
+  aspectRatio="1"
+  shapeType="Circle"
+  orientation="Vertical">
+
+  <MDIcon
+    element="mIcon"
+    aspectRatio="1"
+    height="35%"
+    textColor="all: 255">
+  </MDIcon>
+  <Text
+    element="mTitle"
+    fontSize="m: (14, 14, 28), d: (14, 14, 14)"
+    textColor="all: 255">
+  </Text>
+
+</Element>

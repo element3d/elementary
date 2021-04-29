@@ -1,0 +1,32 @@
+<ScrollView
+  orientation="Horizontal"
+  overflow="Hidden"
+  backgroundColor="r: 255, g: 0, b: 255">
+  <Shadow
+    color="all: 100"
+    offset="x: 0, y: 2"
+    blurSize="2">
+  </Shadow>
+ 
+  <Element
+    orientation="Vertical"
+    alignItemsHor="Start">
+    <Element
+      element="mContent"
+      scaling="Shrink"
+      backgroundColor="r: 255, g: 0, b: 255">
+
+    </Element>
+    <Element
+      positionType="Absolute"
+      element="mSelection"
+      left="0"
+      bottom="0"
+      backgroundColor="r: 255, g: 255, b: 255"
+      width="100%"
+      height="m: (2, 2, 4), d: (2, 2, 2)"
+      scaling="Grow">
+    </Element>
+  </Element>
+
+</ScrollView>

@@ -1,0 +1,39 @@
+<Element
+  width="m: (300, 300, 600), d: (300, 300, 300)"
+  height="m: (20, 30, 40), d: (20, 20, 20)">
+
+  <Element
+    width="100%"
+    height="30%"
+    borderRadius="all: 1"
+    backgroundColor="r: 200, g: 200, b: 200">
+  </Element>
+
+  <Element
+    element="mValue"
+    positionType="Absolute"
+    left="0"
+    height="30%"
+    borderRadius="all: 1">
+  </Element>
+
+  <Element
+    element="mHoverCircle"
+    positionType="Absolute"
+    left="0"
+    opacity="0"
+    aspectRatio="1"
+    height="100%"
+    shapeType="Circle">
+  </Element>
+
+  <Element
+    element="mCircle"
+    positionType="Absolute"
+    left="0"
+    aspectRatio="1"
+    height="100%"
+    shapeType="Circle">
+  </Element>
+
+</Element>

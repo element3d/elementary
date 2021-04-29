@@ -1,0 +1,26 @@
+<Element
+  width="m: (55, 80, 110), d: (55, 55, 55)"
+  shapeType="Circle"
+  aspectRatio="1"
+  overflow="Hidden">
+
+  <Element
+    element="mRipple"
+    positionType="Absolute"
+    shapeType="Circle"
+    aspectRatio="1">
+  </Element>
+
+  <MDIcon
+    element="mIcon"
+    height="m: (15, 22, 30), d: (15, 15, 15)"
+    aspectRatio="1">
+  </MDIcon>
+
+  <Shadow
+    color="all: 100"
+    offset="x: 0, y: 2"
+    blurSize="2">
+  </Shadow>
+
+</Element>

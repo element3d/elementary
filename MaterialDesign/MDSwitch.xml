@@ -1,0 +1,28 @@
+<Element
+  width="m: (40, 55, 80), d: (36, 36, 36)"
+  height="m: (20, 30, 40), d: (20, 20, 20)">
+
+  <Element
+    element="mBack"
+    width="100%"
+    height="75%"
+    borderRadius="all: 1">
+  </Element>
+
+  <Element
+    element="mCircle"
+    positionType="Absolute"
+    left="0"
+    aspectRatio="1"
+    height="100%"
+    shapeType="Circle">
+
+    <Shadow
+      color="all: 100"
+      offset="x: 0, y: 1"
+      blurSize="1">
+    </Shadow>
+
+  </Element>
+
+</Element>

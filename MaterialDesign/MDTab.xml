@@ -1,0 +1,33 @@
+<Element
+  orientation="Vertical"
+  overflow="Hidden">
+
+  <Element
+    element="mRipple"
+    positionType="Absolute"
+    shapeType="Circle"
+    aspectRatio="1">
+  </Element>
+
+  <MDIcon
+    element="mTopIcon"
+    textColor="r: 255, g: 255, b: 255">
+  </MDIcon>
+
+  <Element
+    paddingLeft="m: (20, 20, 40), d: (20, 20, 20)"
+    paddingRight="m: (20, 20, 40), d: (20, 20, 20)"
+    paddingTop="m: (10, 10, 20), d: (10, 10, 10)"
+    paddingBottom="m: (10, 10, 20), d: (10, 10, 10)">
+    <MDIcon
+      element="mLeadingIcon"
+      textColor="r: 255, g: 255, b: 255">
+    </MDIcon>
+    <Text
+      element="mLabel"
+      fontSize="m: (20, 20, 40), d: (20, 20, 20)"
+      textColor="r: 255, g: 255, b: 255">
+    </Text>
+  </Element>
+
+</Element>

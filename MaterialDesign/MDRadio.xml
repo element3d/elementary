@@ -1,0 +1,14 @@
+<Element
+  width="m: (22, 33, 40), d: (22, 22, 22)"
+  height="m: (22, 33, 40), d: (22, 22, 22)"
+  shapeType="Circle"
+  borderSize="5">
+
+  <Element
+    element="mCheck"
+    width="m: (10, 15, 15), d: (10, 10, 10)"
+    height="m: (10, 15, 15), d: (10, 10, 10)"
+    shapeType="Circle">
+  </Element>
+
+</Element>
