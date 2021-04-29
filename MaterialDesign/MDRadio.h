@@ -16,6 +16,7 @@ public:
 public:
 	void Check();
 	void Uncheck();
+	bool IsChecked();
 
 private:
 	bool mIsChecked = false;

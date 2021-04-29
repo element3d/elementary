@@ -19,15 +19,17 @@ bool MDRadio::OnClick(e3::MouseEvent* pEvent)
 
 void MDRadio::Check() 
 {
+	const MDTheme* pTheme = mTheme ? mTheme : MaterialDesign::GetTheme();
+
 	mIsChecked = true;
-	SetBorderColor(mTheme->ColorPrimary);
-	mCheck->SetBackgroundColor(mTheme->ColorPrimary);
+	SetBorderColor(pTheme->ColorPrimary);
+	mCheck->SetBackgroundColor(pTheme->ColorPrimary);
 
 	if (!mAnimation) mAnimation = new e3::Animation();
-	mAnimation->Start(0.1, [this](float v) {
+	mAnimation->Start(0.1, [this, pTheme](float v) {
 		mCheck->SetWidth(v * mCheckDim);
 		mCheck->SetHeight(v * mCheckDim);
-		SetBorderColor(glm::mix(MDColors::Grey::Get(), mTheme->ColorPrimary, v));
+		SetBorderColor(glm::mix(MDColors::Grey::Get(), pTheme->ColorPrimary, v));
 	}, [this](e3::Animation*) {
 		mAnimation = nullptr;
 	});
@@ -35,16 +37,23 @@ void MDRadio::Check()
 
 void MDRadio::Uncheck() 
 {
+	const MDTheme* pTheme = mTheme ? mTheme : MaterialDesign::GetTheme();
+
 	SetBorderColor(MDColors::Grey::Get());
 	
 	mIsChecked = false;
 	if (!mAnimation) mAnimation = new e3::Animation();
-	mAnimation->Start(0.1, [this](float v) {
+	mAnimation->Start(0.1, [this, pTheme](float v) {
 		mCheck->SetWidth((1 - v) * mCheckDim);
 		mCheck->SetHeight((1 - v) * mCheckDim);
-		SetBorderColor(glm::mix(MDColors::Grey::Get(), mTheme->ColorPrimary, 1 - v));
+		SetBorderColor(glm::mix(MDColors::Grey::Get(), pTheme->ColorPrimary, 1 - v));
 	}, [this](e3::Animation*) {
 		mAnimation = nullptr;
 		mCheck->SetBackgroundColor(glm::vec4(0));
 	});
+}
+
+bool MDRadio::IsChecked()
+{
+	return mIsChecked;
 }
