@@ -12,6 +12,7 @@ public:
 
 	void Check();
 	void Uncheck();
+	bool IsChecked();
 
 public:
 	virtual bool OnClick(e3::MouseEvent*) override;

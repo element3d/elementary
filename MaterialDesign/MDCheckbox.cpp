@@ -26,8 +26,9 @@ void MDCheckbox::Check()
 	if (mAnimation) return;
 	mAnimation = new e3::Animation();
 
+	const MDTheme* pTheme = mTheme ? mTheme : MaterialDesign::GetTheme();
 	glm::vec4 bgColor;
-	switch (mTheme->ColorScheme)
+	switch (pTheme->ColorScheme)
 	{
 	case EMDColorScheme::Red:
 		bgColor = MDColors::Red::Get("200");
@@ -44,9 +45,9 @@ void MDCheckbox::Check()
 		break;
 	}
 
-	mAnimation->Start(0.2, [this, bgColor](float v) {
+	mAnimation->Start(0.2, [this, bgColor, pTheme](float v) {
 		e3::Rect2f geo = GetGeometry();
-		SetBackgroundColor(glm::mix(glm::vec4(0), mTheme->ColorPrimary, v));
+		SetBackgroundColor(glm::mix(glm::vec4(0), pTheme->ColorPrimary, v));
 		glm::vec4 bc = MDColors::Grey::Get();
 		SetBorderColor(glm::vec4(glm::vec3(bc), 255 * (1 - v)));
 		mIcon->SetOpacity(v);
@@ -62,8 +63,9 @@ void MDCheckbox::Uncheck()
 	if (mAnimation) return;
 	mAnimation = new e3::Animation();
 
+	const MDTheme* pTheme = mTheme ? mTheme : MaterialDesign::GetTheme();
 	glm::vec4 bgColor;
-	switch (mTheme->ColorScheme)
+	switch (pTheme->ColorScheme)
 	{
 	case EMDColorScheme::Red:
 		bgColor = MDColors::Red::Get("200");
@@ -80,12 +82,17 @@ void MDCheckbox::Uncheck()
 		break;
 	}
 
-	mAnimation->Start(0.2, [this, bgColor](float v) {
+	mAnimation->Start(0.2, [this, bgColor, pTheme](float v) {
 		e3::Rect2f geo = GetGeometry();
-		SetBackgroundColor(glm::mix(glm::vec4(0), mTheme->ColorPrimary, 1 - v));
-		SetBorderColor(glm::mix(MDColors::Grey::Get(), mTheme->ColorPrimary, 1 - v));
+		SetBackgroundColor(glm::mix(glm::vec4(0), pTheme->ColorPrimary, 1 - v));
+		SetBorderColor(glm::mix(MDColors::Grey::Get(), pTheme->ColorPrimary, 1 - v));
 		mIcon->SetOpacity(1 - v);
 	}, [this](e3::Animation*) {
 		mAnimation = nullptr;
 	});
+}
+
+bool MDCheckbox::IsChecked()
+{
+	return mChecked;
 }
