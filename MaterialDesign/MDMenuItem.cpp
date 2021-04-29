@@ -12,6 +12,11 @@ void MDMenuItem::SetText(const std::string& text)
 	mText->SetText(text);
 }
 
+void MDMenuItem::SetText(const std::string& text, bool translate)
+{
+	mText->SetText(text, translate);
+}
+
 /*bool MDMenuItem::OnClick(e3::MouseEvent* pEvent)
 {
 	
