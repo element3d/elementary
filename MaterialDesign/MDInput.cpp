@@ -37,11 +37,13 @@ void MDInput::OnMouseLeave(e3::MouseEvent* pEvent)
 
 void MDInput::Focus()
 {
+	const MDTheme* pTheme = mTheme ? mTheme : MaterialDesign::GetTheme();
+
 	e3::Input::Focus();
 	mHintText->SetTranslation(glm::vec3(0, e3::Dim(-10, -15, -20, -10, -10, -10), 0));
 	mHintText->SetScale(glm::vec3(0.7, 0.7, 1.0));
-	mHintText->SetTextColor(mTheme->ColorPrimary);
-	mUnderline->SetBackgroundColor(mTheme->ColorPrimary);
+	mHintText->SetTextColor(pTheme->ColorPrimary);
+	mUnderline->SetBackgroundColor(pTheme->ColorPrimary);
 	SetBackgroundColor(MDColors::Grey::Get("200"));
 	mFocused = true;
 }

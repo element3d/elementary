@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.0)
 set (PROJECT MaterialDesign)
 project(${PROJECT})
 
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+
 file(GLOB SRC_PRIVATE CONFIGURE_DEPENDS 
 	private/*.cpp 
 	private/*.h
