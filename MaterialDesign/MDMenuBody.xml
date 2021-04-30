@@ -5,4 +5,11 @@
   backgroundColor="all: 255"
   borderRadius="all: 5"
   orientation="Vertical">
+
+ <Shadow
+    color="all: 180"
+    offset="x: 0, y: 3"
+    blurSize="3">
+  </Shadow>
+
 </DropdownBody>
