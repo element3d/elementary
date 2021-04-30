@@ -4,7 +4,7 @@
 MDMenuItem::MDMenuItem()
 	: MDMenuItemBase()
 {
-
+	mText->SetTextColor(MDColors::Grey::Get("800"));
 }
 
 void MDMenuItem::SetText(const std::string& text)
@@ -17,6 +17,11 @@ void MDMenuItem::SetText(const std::string& text, bool translate)
 	mText->SetText(text, translate);
 }
 
+void MDMenuItem::SetIcon(const std::string& iconName)
+{
+	mIcon->SetVisibility(EVisibility::Visible);
+	mIcon->SetName(iconName);
+}
 /*bool MDMenuItem::OnClick(e3::MouseEvent* pEvent)
 {
 	

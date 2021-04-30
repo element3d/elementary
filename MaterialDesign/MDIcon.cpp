@@ -1,4 +1,5 @@
 #include "MDIcon.h"
+#include "MaterialDesign.h"
 #include <fstream>
 
 std::map<std::string, std::string> MDIcon::sIconMap;
@@ -9,6 +10,7 @@ MDIcon::MDIcon()
 {
 	mIconType = EMDIconType::Regular;
 	setFont("MaterialDesign/icons/MaterialIcons-Regular.ttf");
+	SetTextColor(MDColors::Grey::Get("800"));
 	if (!sIconMap.size()) _InitIconMap();
 }
 

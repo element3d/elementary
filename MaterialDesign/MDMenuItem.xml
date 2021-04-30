@@ -1,4 +1,15 @@
-<MDListTile>
+<MDListTile
+  alignItemsHor="Start"
+  paddingLeft="m: (20, 20, 36), d: (20, 20, 20)">
+
+  <MDIcon
+    element="mIcon"
+    visibility="Hidden"
+    height="40%"
+    aspectRatio="1"
+    marginRight="m: (30, 30, 56), d: (30, 30, 30)"
+    marginLeft="m: (10, 10, 18), d: (10, 10, 10)">
+  </MDIcon>
 
   <Text
     element="mText"

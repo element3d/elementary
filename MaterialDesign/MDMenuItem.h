@@ -11,6 +11,7 @@ public:
 
 	void SetText(const std::string& text);
 	void SetText(const std::string& text, bool translate);
+	void SetIcon(const std::string& iconName);
 
 /*public:
 	virtual bool OnClick(e3::MouseEvent* pEvent) override;
