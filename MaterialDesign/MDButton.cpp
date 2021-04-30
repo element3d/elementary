@@ -7,39 +7,9 @@ MDButton::MDButton()
 	mButtonType = EMDButtonType::Regular;
 	SetBackgroundColor(glm::vec4(255));
 	SetBorderRadius(glm::vec4(5));
-
+	_UpdateStyles();
 	MaterialDesign::AddOnThemeChangeCallback([this](const MDTheme* pTheme) {
-		switch (mButtonType)
-		{
-		case EMDButtonType::Regular:
-			SetBackgroundColor(glm::vec4(255));
-			mIcon->SetTextColor(MaterialDesign::GetColorPrimary());
-			mLabel->SetTextColor(MaterialDesign::GetColorPrimary());
-			SetBorderColor(MaterialDesign::GetColorPrimary());
-			SetBorderSize(0);
-			break;
-		case EMDButtonType::Elevated:
-			SetBackgroundColor(MaterialDesign::GetColorPrimary());
-			mLabel->SetTextColor(glm::vec4(255));
-			mIcon->SetTextColor(glm::vec4(255));
-			break;
-		case EMDButtonType::Outlined:
-			SetBackgroundColor(glm::vec4(255));
-			mIcon->SetTextColor(MaterialDesign::GetColorPrimary());
-			mLabel->SetTextColor(MaterialDesign::GetColorPrimary());
-			SetBorderColor(MaterialDesign::GetColorPrimary());
-			SetBorderSize(1);
-			break;
-		case EMDButtonType::FAB:
-			SetBackgroundColor(MaterialDesign::GetColorPrimary());
-			SetBorderSize(0);
-			SetBorderRadius(glm::vec4(1));
-			mLabel->SetTextColor(glm::vec4(255));
-			mIcon->SetTextColor(glm::vec4(255));
-			break;
-		default:
-			break;
-		}
+		_UpdateStyles();
 	});
 }
 
@@ -117,6 +87,41 @@ void MDButton::Render()
 
 	SetBorderColor(MDColors::Grey::Get("400"));
 	MDButtonBase::Render();
+}
+
+void MDButton::_UpdateStyles() 
+{
+	switch (mButtonType)
+	{
+	case EMDButtonType::Regular:
+		SetBackgroundColor(glm::vec4(255));
+		mIcon->SetTextColor(MaterialDesign::GetColorPrimary());
+		mLabel->SetTextColor(MaterialDesign::GetColorPrimary());
+		SetBorderColor(MaterialDesign::GetColorPrimary());
+		SetBorderSize(0);
+		break;
+	case EMDButtonType::Elevated:
+		SetBackgroundColor(MaterialDesign::GetColorPrimary());
+		mLabel->SetTextColor(glm::vec4(255));
+		mIcon->SetTextColor(glm::vec4(255));
+		break;
+	case EMDButtonType::Outlined:
+		SetBackgroundColor(glm::vec4(255));
+		mIcon->SetTextColor(MaterialDesign::GetColorPrimary());
+		mLabel->SetTextColor(MaterialDesign::GetColorPrimary());
+		SetBorderColor(MaterialDesign::GetColorPrimary());
+		SetBorderSize(1);
+		break;
+	case EMDButtonType::FAB:
+		SetBackgroundColor(MaterialDesign::GetColorPrimary());
+		SetBorderSize(0);
+		SetBorderRadius(glm::vec4(1));
+		mLabel->SetTextColor(glm::vec4(255));
+		mIcon->SetTextColor(glm::vec4(255));
+		break;
+	default:
+		break;
+	}
 }
 
 bool MDButton::OnClick(e3::MouseEvent* pEvent)

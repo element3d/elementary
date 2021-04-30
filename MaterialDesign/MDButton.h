@@ -32,6 +32,9 @@ public:
 	virtual void Render() override;
 
 private:
+	void _UpdateStyles();
+
+private:
 	EMDButtonType mButtonType;
 	e3::Animation* mRippleAnimation = nullptr;
 };
