@@ -52,13 +52,13 @@ void MDButton::SetIcon(const std::string& iconName)
 	mIcon->SetName(iconName);
 	mIcon->SetHeight("40%");
 	mIcon->SetMarginRight(10);
-	mIcon->SetTextColor(MaterialDesign::GetColorPrimary());
+//	mIcon->SetTextColor(MaterialDesign::GetColorPrimary());
 }
 
 void MDButton::SetLabel(const std::string& label) 
 {
 	mLabel->SetText(label);
-	mLabel->SetTextColor(MaterialDesign::GetColorPrimary());
+//	mLabel->SetTextColor(MaterialDesign::GetColorPrimary());
 }
 
 void MDButton::Render()
