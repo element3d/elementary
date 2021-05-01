@@ -1,13 +1,13 @@
 
-#ifndef MDElevatedButton_H_
-#define MDElevatedButton_H_
+#ifndef MDOutlinedButton_H_
+#define MDOutlinedButton_H_
 
-#include "private/MDElevatedButtonBase.h"
+#include "private/MDOutlinedButtonBase.h"
 
-class E3_EXPORT MDElevatedButton : public MDElevatedButtonBase
+class E3_EXPORT MDOutlinedButton : public MDOutlinedButtonBase
 {
 public:
-	MDElevatedButton();
+	MDOutlinedButton();
 
 	void SetIcon(const std::string& iconName);
 	void SetLabel(const std::string& label);
@@ -22,5 +22,5 @@ private:
 	e3::Animation* mRippleAnimation = nullptr;
 };
 
-#endif // MDElevatedButton_H_
+#endif // MDOutlinedButton_H_
 

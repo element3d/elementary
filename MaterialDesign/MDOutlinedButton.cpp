@@ -1,21 +1,23 @@
-#include "MDElevatedButton.h"
+#include "MDOutlinedButton.h"
 #include "MaterialDesign.h"
 
-MDElevatedButton::MDElevatedButton()
-	: MDElevatedButtonBase()
+MDOutlinedButton::MDOutlinedButton()
+	: MDOutlinedButtonBase()
 {
-	SetBackgroundColor(MaterialDesign::GetColorPrimary());
-	mLabel->SetTextColor(glm::vec4(255));
-	mIcon->SetTextColor(glm::vec4(255));
-
+	SetBackgroundColor(glm::vec4(255));
+	mIcon->SetTextColor(MaterialDesign::GetColorPrimary());
+	mLabel->SetTextColor(MaterialDesign::GetColorPrimary());
+	SetBorderColor(MaterialDesign::GetColorPrimary());
+	
 	MaterialDesign::AddOnThemeChangeCallback([this](const MDTheme* pTheme) {
-		SetBackgroundColor(MaterialDesign::GetColorPrimary());
-		mLabel->SetTextColor(glm::vec4(255));
-		mIcon->SetTextColor(glm::vec4(255));
+		SetBackgroundColor(glm::vec4(255));
+		mIcon->SetTextColor(MaterialDesign::GetColorPrimary());
+		mLabel->SetTextColor(MaterialDesign::GetColorPrimary());
+		SetBorderColor(MaterialDesign::GetColorPrimary());
 	});
 }
 
-void MDElevatedButton::SetIcon(const std::string& iconName)
+void MDOutlinedButton::SetIcon(const std::string& iconName)
 {
 	mIcon->SetName(iconName);
 	mIcon->SetHeight("40%");
@@ -23,18 +25,18 @@ void MDElevatedButton::SetIcon(const std::string& iconName)
 	//	mIcon->SetTextColor(MaterialDesign::GetColorPrimary());
 }
 
-void MDElevatedButton::SetLabel(const std::string& label)
+void MDOutlinedButton::SetLabel(const std::string& label)
 {
 	mLabel->SetText(label);
 	//	mLabel->SetTextColor(MaterialDesign::GetColorPrimary());
 }
 
-void MDElevatedButton::SetLabel(const std::string& label, bool translate)
+void MDOutlinedButton::SetLabel(const std::string& label, bool translate)
 {
 	mLabel->SetText(label, translate);
 }
 
-bool MDElevatedButton::OnClick(e3::MouseEvent* pEvent)
+bool MDOutlinedButton::OnClick(e3::MouseEvent* pEvent)
 {
 	if (!mRippleAnimation)
 		mRippleAnimation = new e3::Animation();
@@ -56,12 +58,12 @@ bool MDElevatedButton::OnClick(e3::MouseEvent* pEvent)
 		mRipple->SetHeight(0);
 	});
 
-	return 	MDElevatedButtonBase::OnClick(pEvent);
+	return 	MDOutlinedButtonBase::OnClick(pEvent);
 }
 
-void MDElevatedButton::OnMouseEnter(e3::MouseEvent* pEvent)
+void MDOutlinedButton::OnMouseEnter(e3::MouseEvent* pEvent)
 {
-	MDElevatedButtonBase::OnMouseEnter(pEvent);
+	MDOutlinedButtonBase::OnMouseEnter(pEvent);
 	EMDColorScheme colorScheme = MaterialDesign::GetColorScheme();
 	switch (colorScheme)
 	{
@@ -70,8 +72,7 @@ void MDElevatedButton::OnMouseEnter(e3::MouseEvent* pEvent)
 		break;
 	case EMDColorScheme::DeepPurple:
 	{
-		
-		SetBackgroundColor(MDColors::DeepPurple::Get("400"));
+		SetBackgroundColor(MDColors::DeepPurple::Get("50"));
 		break;
 	}
 	case EMDColorScheme::Grey:
@@ -82,8 +83,8 @@ void MDElevatedButton::OnMouseEnter(e3::MouseEvent* pEvent)
 	}
 }
 
-void MDElevatedButton::OnMouseLeave(e3::MouseEvent* pEvent)
+void MDOutlinedButton::OnMouseLeave(e3::MouseEvent* pEvent)
 {
-	MDElevatedButtonBase::OnMouseLeave(pEvent);
-	SetBackgroundColor(MaterialDesign::GetColorPrimary());
+	MDOutlinedButtonBase::OnMouseLeave(pEvent);
+	SetBackgroundColor(glm::vec4(255));
 }
