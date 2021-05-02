@@ -11,7 +11,7 @@ MDFloatingActionButtonBase::MDFloatingActionButtonBase()
         this->SetAspectRatio(1.000000);
         this->SetOverflow((e3::EOverflow)0);
         e3::ShadowParams ShadowParams;
-        ShadowParams.Color = glm::vec4(100.000000, 100.000000, 100.000000, 255.000000);
+        ShadowParams.Color = glm::vec4(0.000000, 0.000000, 0.000000, 255.000000);
         ShadowParams.BlurSize = 2;
         ShadowParams.Opacity = 1.0;
         ShadowParams.Scale = 1.0;

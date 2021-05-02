@@ -7,7 +7,7 @@
   orientation="Vertical">
 
  <Shadow
-    color="all: 180"
+    color="all: 0"
     offset="x: 0, y: 3"
     blurSize="3">
   </Shadow>

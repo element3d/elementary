@@ -13,7 +13,7 @@ MDMenuBodyBase::MDMenuBodyBase()
         this->SetBorderRadius(glm::vec4(5.000000, 5.000000, 5.000000, 5.000000));
         this->SetOrientation((EOrientation)1);
         e3::ShadowParams ShadowParams;
-        ShadowParams.Color = glm::vec4(180.000000, 180.000000, 180.000000, 255.000000);
+        ShadowParams.Color = glm::vec4(0.000000, 0.000000, 0.000000, 255.000000);
         ShadowParams.BlurSize = 3;
         ShadowParams.Opacity = 1.0;
         ShadowParams.Scale = 1.0;
