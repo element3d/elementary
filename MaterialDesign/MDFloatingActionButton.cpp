@@ -4,15 +4,32 @@
 MDFloatingActionButton::MDFloatingActionButton()
 	: MDFloatingActionButtonBase()
 {
+	SetBackgroundColor(MaterialDesign::GetColorPrimary());
 	MaterialDesign::AddOnThemeChangeCallback([this](const MDTheme* pTheme) {
-		SetBackgroundColor(MaterialDesign::GetColorPrimary());
+		if (!mHasColor)
+			SetBackgroundColor(MaterialDesign::GetColorPrimary());
+		if (!mHasIconColor)
+			mIcon->SetTextColor(glm::vec4(255));
+		
 	});
 }
 
 void MDFloatingActionButton::SetIcon(const std::string& iconName)
 {
 	mIcon->SetName(iconName);
-	mIcon->SetTextColor(glm::vec4(255));
+
+}
+
+void MDFloatingActionButton::SetColor(const glm::vec4& color)
+{
+	SetBackgroundColor(color);
+	mHasColor = true;
+}
+
+void MDFloatingActionButton::SetIconColor(const glm::vec4& color)
+{
+	mIcon->SetTextColor(color);
+	mHasIconColor = true;
 }
 
 bool MDFloatingActionButton::OnClick(e3::MouseEvent* pEvent)
