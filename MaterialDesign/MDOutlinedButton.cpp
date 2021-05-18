@@ -1,5 +1,6 @@
 #include "MDOutlinedButton.h"
 #include "MaterialDesign.h"
+#include <e3/Application.h>
 
 MDOutlinedButton::MDOutlinedButton()
 	: MDOutlinedButtonBase()
@@ -8,7 +9,21 @@ MDOutlinedButton::MDOutlinedButton()
 	mIcon->SetTextColor(MaterialDesign::GetColorPrimary());
 	mLabel->SetTextColor(MaterialDesign::GetColorPrimary());
 	SetBorderColor(MaterialDesign::GetColorPrimary());
-	
+
+	e3::EDisplaySize displaySize = GetApplication()->GetDisplaySize();
+	glm::vec4 radius(5);
+	switch (displaySize)
+	{
+		case e3::EDisplaySize::Small:
+		case e3::EDisplaySize::Medium:
+			break;
+		case e3::EDisplaySize::Large:
+			radius = glm::vec4(10);
+			break;
+	}
+
+	SetBorderRadius(radius);
+
 	MaterialDesign::AddOnThemeChangeCallback([this](const MDTheme* pTheme) {
 		SetBackgroundColor(glm::vec4(255));
 		mIcon->SetTextColor(MaterialDesign::GetColorPrimary());
@@ -20,8 +35,8 @@ MDOutlinedButton::MDOutlinedButton()
 void MDOutlinedButton::SetIcon(const std::string& iconName)
 {
 	mIcon->SetName(iconName);
-	mIcon->SetHeight("40%");
-	mIcon->SetMarginRight(10);
+	mIcon->SetHeight("30%");
+	mIcon->SetMarginRight(e3::Dim(10, 10, 20, 10, 10, 10));
 	//	mIcon->SetTextColor(MaterialDesign::GetColorPrimary());
 }
 

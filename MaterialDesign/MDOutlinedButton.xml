@@ -1,6 +1,6 @@
 <Element
-  width="m: (100, 150, 200), d: (100, 100, 100)"
-  height="m: (35, 55, 70), d: (35, 35, 35)"
+  width="m: (100, 150, 300), d: (100, 100, 100)"
+  height="m: (35, 55, 100), d: (35, 35, 35)"
   borderRadius="all: 5"
   borderSize="1"
   overflow="Hidden">
@@ -18,7 +18,7 @@
 
   <Text
     element="mLabel"
-    fontSize="m: (18, 22, 36), d: (18, 18, 18)">
+    fontSize="m: (18, 22, 40), d: (18, 18, 18)">
   </Text>
 
 </Element>

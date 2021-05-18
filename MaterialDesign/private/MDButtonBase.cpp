@@ -9,7 +9,7 @@ MDButtonBase::MDButtonBase()
         this->SetWidth(e3::Dim("100", "150", "200", "100", "100", "100"));
         this->SetHeight(e3::Dim("35", "55", "70", "35", "35", "35"));
         this->SetOverflow((e3::EOverflow)0);
-        mRipple = e3::ViewFactory::CreateShape( EOrientation::Horizontal);
+        mRipple = e3::ViewFactory::CreateShape( e3::EOrientation::Horizontal);
         AddElement(mRipple);
         mRipple->SetPositionType((e3::EPositionType)1);
         mRipple->SetShapeType((EShapeType)1);

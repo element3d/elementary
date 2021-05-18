@@ -6,14 +6,14 @@
 MDSwitchBase::MDSwitchBase()
 	: e3::Element()
 {
-        this->SetWidth(e3::Dim("40", "55", "80", "36", "36", "36"));
-        this->SetHeight(e3::Dim("20", "30", "40", "20", "20", "20"));
-        mBack = e3::ViewFactory::CreateShape( EOrientation::Horizontal);
+        this->SetWidth(e3::Dim("40", "55", "100", "36", "36", "36"));
+        this->SetHeight(e3::Dim("20", "30", "60", "20", "20", "20"));
+        mBack = e3::ViewFactory::CreateShape( e3::EOrientation::Horizontal);
         AddElement(mBack);
         mBack->SetWidth("100%");
-        mBack->SetHeight("75%");
+        mBack->SetHeight("70%");
         mBack->SetBorderRadius(glm::vec4(1.000000, 1.000000, 1.000000, 1.000000));
-        mCircle = e3::ViewFactory::CreateShape( EOrientation::Horizontal);
+        mCircle = e3::ViewFactory::CreateShape( e3::EOrientation::Horizontal);
         AddElement(mCircle);
         mCircle->SetPositionType((e3::EPositionType)1);
         mCircle->SetLeft(0.000000);

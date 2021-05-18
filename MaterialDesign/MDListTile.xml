@@ -1,6 +1,6 @@
 <Element
   width="100%"
-  height="m: (50, 50, 100), d: (50, 50, 50)"
+  height="m: (50, 50, 140), d: (50, 50, 50)"
   backgroundColor="all: 255"
   overflow="Hidden">
 

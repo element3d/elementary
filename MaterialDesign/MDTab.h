@@ -22,7 +22,10 @@ public:
 private:
 	void Select();
 	void Unselect();
-
+	void Render() override 
+	{
+		MDTabBase::Render();
+	}
 private:
 	const MDTheme* mTheme = nullptr;
 	e3::Dim mIconDim;

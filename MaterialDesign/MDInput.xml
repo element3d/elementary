@@ -1,14 +1,14 @@
 <Input
   width="m: (300, 400, 600), d: (300, 300, 300)"
-  height="m: (60, 80, 120), d: (60, 60, 60)"
+  height="m: (60, 80, 150), d: (60, 60, 60)"
   paddingTop="m: (15, 15, 30), d: (15, 15, 15)"
-  fontSize="m: (17, 22, 34), d: (17, 17, 17)"
+  fontSize="m: (17, 22, 40), d: (17, 17, 17)"
   orientation="Vertical">
 
   <Text
     element="mHintText"
     text="Name*"
-    fontSize="m: (17, 22, 34), d: (17, 17, 17)"
+    fontSize="m: (17, 22, 40), d: (17, 17, 17)"
     marginLeft="m: (10, 15, 20), d: (10, 10, 10)"
     positionType="Absolute"
     left="0">

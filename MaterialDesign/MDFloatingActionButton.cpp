@@ -5,6 +5,7 @@ MDFloatingActionButton::MDFloatingActionButton()
 	: MDFloatingActionButtonBase()
 {
 	SetBackgroundColor(MaterialDesign::GetColorPrimary());
+	mIcon->SetTextColor(glm::vec4(255));
 	MaterialDesign::AddOnThemeChangeCallback([this](const MDTheme* pTheme) {
 		if (!mHasColor)
 			SetBackgroundColor(MaterialDesign::GetColorPrimary());

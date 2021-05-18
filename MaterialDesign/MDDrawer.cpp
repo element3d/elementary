@@ -33,7 +33,7 @@ void MDDrawer::Show()
 
 void MDDrawer::ShowModal()
 {
-	SetVisibility(EVisibility::Visible);
+	SetVisibility(e3::EVisibility::Visible);
 	SetWidth("100%");
 	Show(true);
 }
@@ -53,7 +53,7 @@ void MDDrawer::Hide()
 		SetBackgroundColor(glm::vec4(0, 0, 0, (1 - v) * alpha));
 	}, [this](e3::Animation*) {
 		mAnimation = nullptr;
-		SetVisibility(EVisibility::Gone);
+		SetVisibility(e3::EVisibility::Gone);
 	});
 }
 
@@ -72,7 +72,7 @@ void MDDrawer::Show(bool showModal)
 
 	SetBackgroundColor(glm::vec4(0, 0, 0, 0));
 	mIsShown = true;
-	SetVisibility(EVisibility::Visible);
+	SetVisibility(e3::EVisibility::Visible);
 	e3::Rect2f contentGeo = mContent->GetGeometry();
 	mContent->SetTranslation(glm::vec3(-contentGeo.width, 0, 0));
 	mAnimation = new e3::Animation();

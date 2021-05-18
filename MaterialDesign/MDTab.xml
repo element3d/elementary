@@ -17,8 +17,8 @@
   <Element
     paddingLeft="m: (20, 20, 40), d: (20, 20, 20)"
     paddingRight="m: (20, 20, 40), d: (20, 20, 20)"
-    paddingTop="m: (10, 10, 20), d: (10, 10, 10)"
-    paddingBottom="m: (10, 10, 20), d: (10, 10, 10)">
+    paddingTop="m: (10, 10, 40), d: (10, 10, 10)"
+    paddingBottom="m: (10, 10, 40), d: (10, 10, 10)">
     <MDIcon
       element="mLeadingIcon"
       textColor="r: 255, g: 255, b: 255">

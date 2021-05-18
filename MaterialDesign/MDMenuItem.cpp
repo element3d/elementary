@@ -19,7 +19,7 @@ void MDMenuItem::SetText(const std::string& text, bool translate)
 
 void MDMenuItem::SetIcon(const std::string& iconName)
 {
-	mIcon->SetVisibility(EVisibility::Visible);
+	mIcon->SetVisibility(e3::EVisibility::Visible);
 	mIcon->SetName(iconName);
 }
 /*bool MDMenuItem::OnClick(e3::MouseEvent* pEvent)

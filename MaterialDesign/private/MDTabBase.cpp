@@ -6,9 +6,9 @@
 MDTabBase::MDTabBase()
 	: e3::Element()
 {
-        this->SetOrientation((EOrientation)1);
+        this->SetOrientation((e3::EOrientation)1);
         this->SetOverflow((e3::EOverflow)0);
-        mRipple = e3::ViewFactory::CreateShape( EOrientation::Horizontal);
+        mRipple = e3::ViewFactory::CreateShape( e3::EOrientation::Horizontal);
         AddElement(mRipple);
         mRipple->SetPositionType((e3::EPositionType)1);
         mRipple->SetShapeType((EShapeType)1);
@@ -16,12 +16,12 @@ MDTabBase::MDTabBase()
         mTopIcon = new MDIcon();
         AddElement(mTopIcon);
         mTopIcon->SetTextColor(glm::vec4(255.000000, 255.000000, 255.000000, 255.000000));
-        e3::Element* pElement1 = e3::ViewFactory::CreateShape( EOrientation::Horizontal);
+        e3::Element* pElement1 = e3::ViewFactory::CreateShape( e3::EOrientation::Horizontal);
         AddElement(pElement1);
         pElement1->SetPaddingLeft(e3::Dim("20", "20", "40", "20", "20", "20"));
         pElement1->SetPaddingRight(e3::Dim("20", "20", "40", "20", "20", "20"));
-        pElement1->SetPaddingTop(e3::Dim("10", "10", "20", "10", "10", "10"));
-        pElement1->SetPaddingBottom(e3::Dim("10", "10", "20", "10", "10", "10"));
+        pElement1->SetPaddingTop(e3::Dim("10", "10", "40", "10", "10", "10"));
+        pElement1->SetPaddingBottom(e3::Dim("10", "10", "40", "10", "10", "10"));
         mLeadingIcon = new MDIcon();
         pElement1->AddElement(mLeadingIcon);
         mLeadingIcon->SetTextColor(glm::vec4(255.000000, 255.000000, 255.000000, 255.000000));

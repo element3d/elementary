@@ -9,7 +9,7 @@ MDBottomSheetBase::MDBottomSheetBase()
         this->SetWidth("100%");
         this->SetPositionType((e3::EPositionType)1);
         this->SetBottom(0.000000);
-        this->SetVisibility((EVisibility)1);
+        this->SetVisibility((e3::EVisibility)1);
         this->SetAlignItemsVer((e3::EAlignment)1);
 
 }

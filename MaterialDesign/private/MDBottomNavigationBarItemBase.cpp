@@ -9,7 +9,7 @@ MDBottomNavigationBarItemBase::MDBottomNavigationBarItemBase()
         this->SetHeight("100%");
         this->SetAspectRatio(1.000000);
         this->SetShapeType((EShapeType)1);
-        this->SetOrientation((EOrientation)1);
+        this->SetOrientation((e3::EOrientation)1);
         mIcon = new MDIcon();
         AddElement(mIcon);
         mIcon->SetAspectRatio(1.000000);

@@ -4,6 +4,12 @@
 MDInput::MDInput()
 	: MDInputBase()
 {
+	SetCursorColor(MaterialDesign::GetColorPrimary());
+	SetBackgroundColor(MDColors::Grey::Get("200"));
+	mUnderline->SetScale(glm::vec3(2 * GetGeometry().width, 1, 1));
+	mUnderline->SetBackgroundColor(MDColors::Grey::Get("500"));
+	mUnderline->SetTranslation(glm::vec3(GetGeometry().width , 0, 0));
+
 	MaterialDesign::AddOnThemeChangeCallback([this](const MDTheme* pTheme) {
 		mTheme = pTheme;
 		SetCursorColor(mTheme->ColorPrimary);
@@ -11,13 +17,13 @@ MDInput::MDInput()
 		mUnderline->SetBackgroundColor(MDColors::Grey::Get("500"));
 	});
 
-	GetChildren()[0]->SetPaddingLeft(e3::Dim(10, 15, 20, 10, 10, 10));
+	/*GetChildren()[0]->*/SetPaddingLeft(e3::Dim(10, 15, 20, 10, 10, 10));
 }
 
 bool MDInput::OnClick(e3::MouseEvent* pEvent)
 {
 	bool b = e3::Input::OnClick(pEvent);
-	
+
 	return b;
 }
 
@@ -40,7 +46,9 @@ void MDInput::Focus()
 	const MDTheme* pTheme = mTheme ? mTheme : MaterialDesign::GetTheme();
 
 	e3::Input::Focus();
-	mHintText->SetTranslation(glm::vec3(0, e3::Dim(-10, -15, -20, -10, -10, -10), 0));
+	glm::vec4 tr(0, 0, 0, 1);
+	tr = GetTranslation() * tr;
+	mHintText->SetTranslation(glm::vec3(tr.x, tr.y + e3::Dim(-10, -15, -20, -10, -10, -10), 0));
 	mHintText->SetScale(glm::vec3(0.7, 0.7, 1.0));
 	mHintText->SetTextColor(pTheme->ColorPrimary);
 	mUnderline->SetBackgroundColor(pTheme->ColorPrimary);
@@ -53,12 +61,42 @@ void MDInput::Unfocus()
 	mFocused = false;
 	if (!GetText().size())
 	{
-		mHintText->SetTranslation(glm::vec3(0, 0, 0));
+		glm::vec4 tr(0, 0, 0, 1);
+		tr = GetTranslation() * tr;
+		mHintText->SetTranslation(glm::vec3(tr));
 		mHintText->SetScale(glm::vec3(1.0, 1.0, 1.0));
 	}
 	mHintText->SetTextColor(glm::vec4(0, 0, 0, 255));
 	mUnderline->SetBackgroundColor(MDColors::Grey::Get("600"));
 	e3::Input::Unfocus();
+}
+
+
+void MDInput::SetHint(const std::string &hint)
+{
+	mHintText->SetText(hint);
+}
+
+void MDInput::SetHint(const std::string &hint, bool translate)
+{
+	mHintText->SetText(hint, translate);
+}
+
+void MDInput::SetText(const std::string& text)
+{
+	if (text.size())
+	{
+		glm::vec4 tr(0, 0, 0, 1);
+		tr = GetTranslation() * tr;
+		mHintText->SetTranslation(glm::vec3(tr.x, tr.y + e3::Dim(-10, -15, -20, -10, -10, -10), 0));
+		mHintText->SetScale(glm::vec3(0.7, 0.7, 1.0));
+	}
+	MDInputBase::SetText(text);
+}
+
+void MDInput::Render()
+{
+	e3::Input::Render();
 }
 
 void MDInput::SetTranslation(const glm::vec3 &pos)

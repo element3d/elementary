@@ -26,7 +26,7 @@ void MDTabBarView::SetIndex(int index)
 	{
 		mTmpPage->SetTranslation(glm::vec3(currGeo.width, 0, 0));
 	}
-	mTmpPage->SetVisibility(EVisibility::Visible);
+	mTmpPage->SetVisibility(e3::EVisibility::Visible);
 
 	mAnimation = new e3::Animation();
 	mAnimation->Start(0.3, [this, currGeo, index, oldIndex](float v) {
@@ -42,9 +42,9 @@ void MDTabBarView::SetIndex(int index)
 		}
 	}, [this](e3::Animation*) {
 		mAnimation = nullptr;
-		mCurrentPage->SetVisibility(EVisibility::Gone);
+		mCurrentPage->SetVisibility(e3::EVisibility::Gone);
 		mCurrentPage = mTmpPage;
-		mCurrentPage->SetVisibility(EVisibility::Visible);
+		mCurrentPage->SetVisibility(e3::EVisibility::Visible);
 		mTmpPage = nullptr;
 	});
 }
@@ -70,11 +70,11 @@ void MDTabBarView::AddElement(e3::Element* pPage)
 	if (!mCurrentPage) 
 	{
 		mCurrentPage = pPage;
-		mCurrentPage->SetVisibility(EVisibility::Visible);
+		mCurrentPage->SetVisibility(e3::EVisibility::Visible);
 	}
 	else 
 	{
-		pPage->SetVisibility(EVisibility::Gone);
+		pPage->SetVisibility(e3::EVisibility::Gone);
 	}
 	
 	pPage->SetPositionType(e3::EPositionType::Absolute);

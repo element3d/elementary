@@ -6,7 +6,7 @@
 MDFloatingActionButtonBase::MDFloatingActionButtonBase()
 	: e3::Element()
 {
-        this->SetWidth(e3::Dim("55", "80", "110", "55", "55", "55"));
+        this->SetWidth(e3::Dim("55", "80", "140", "55", "55", "55"));
         this->SetShapeType((EShapeType)1);
         this->SetAspectRatio(1.000000);
         this->SetOverflow((e3::EOverflow)0);
@@ -17,7 +17,7 @@ MDFloatingActionButtonBase::MDFloatingActionButtonBase()
         ShadowParams.Scale = 1.0;
         ShadowParams.Offset = glm::ivec2(0, 2);
         SetShadow(ShadowParams);
-        mRipple = e3::ViewFactory::CreateShape( EOrientation::Horizontal);
+        mRipple = e3::ViewFactory::CreateShape( e3::EOrientation::Horizontal);
         AddElement(mRipple);
         mRipple->SetPositionType((e3::EPositionType)1);
         mRipple->SetShapeType((EShapeType)1);
