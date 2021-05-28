@@ -6,7 +6,7 @@
 MDMenuBase::MDMenuBase()
 	: e3::Dropdown()
 {
-        this->SetShapeType((EShapeType)1);
+        this->SetShapeType((e3::EShapeType)1);
         this->SetPadding(e3::Dim("20", "20", "40", "20", "20", "20"));
         mIcon = new MDIcon();
         AddElement(mIcon);

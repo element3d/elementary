@@ -1,3 +1,4 @@
+#include <e3/Application.h>
 #include "MDIcon.h"
 #include "MaterialDesign.h"
 #include <fstream>
@@ -74,7 +75,7 @@ EMDIconType MDIcon::GetIconType()
 void MDIcon::_InitIconMap() 
 {
 	{
-		std::string cp = e3::AssetManager::get().getPath("MaterialDesign/icons/MaterialIcons-Regular.codepoints");
+		std::string cp = GetApplication()->GetAssetManager()->GetAssetPath("MaterialDesign/icons/MaterialIcons-Regular.codepoints");
 		std::ifstream infile(cp);
 		std::string name, code;
 		while (infile >> name >> code)
@@ -83,7 +84,7 @@ void MDIcon::_InitIconMap()
 		}
 	}
 	{
-		std::string cp = e3::AssetManager::get().getPath("MaterialDesign/icons/MaterialIconsOutlined-Regular.codepoints");
+		std::string cp = GetApplication()->GetAssetManager()->GetAssetPath("MaterialDesign/icons/MaterialIconsOutlined-Regular.codepoints");
 		std::ifstream infile(cp);
 		std::string name, code;
 		while (infile >> name >> code)

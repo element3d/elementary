@@ -14,7 +14,7 @@ MDOutlinedButtonBase::MDOutlinedButtonBase()
         mRipple = e3::ViewFactory::CreateShape( e3::EOrientation::Horizontal);
         AddElement(mRipple);
         mRipple->SetPositionType((e3::EPositionType)1);
-        mRipple->SetShapeType((EShapeType)1);
+        mRipple->SetShapeType((e3::EShapeType)1);
         mRipple->SetAspectRatio(1.000000);
         mIcon = new MDIcon();
         AddElement(mIcon);

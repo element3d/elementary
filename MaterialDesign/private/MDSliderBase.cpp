@@ -27,13 +27,13 @@ MDSliderBase::MDSliderBase()
         mHoverCircle->SetOpacity(0.000000);
         mHoverCircle->SetAspectRatio(1.000000);
         mHoverCircle->SetHeight("100%");
-        mHoverCircle->SetShapeType((EShapeType)1);
+        mHoverCircle->SetShapeType((e3::EShapeType)1);
         mCircle = e3::ViewFactory::CreateShape( e3::EOrientation::Horizontal);
         AddElement(mCircle);
         mCircle->SetPositionType((e3::EPositionType)1);
         mCircle->SetLeft(0.000000);
         mCircle->SetAspectRatio(1.000000);
         mCircle->SetHeight("100%");
-        mCircle->SetShapeType((EShapeType)1);
+        mCircle->SetShapeType((e3::EShapeType)1);
 
 }

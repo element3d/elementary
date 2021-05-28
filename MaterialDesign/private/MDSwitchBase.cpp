@@ -19,7 +19,7 @@ MDSwitchBase::MDSwitchBase()
         mCircle->SetLeft(0.000000);
         mCircle->SetAspectRatio(1.000000);
         mCircle->SetHeight("100%");
-        mCircle->SetShapeType((EShapeType)1);
+        mCircle->SetShapeType((e3::EShapeType)1);
         e3::ShadowParams mCircleShadowParams;
         mCircleShadowParams.Color = glm::vec4(100.000000, 100.000000, 100.000000, 255.000000);
         mCircleShadowParams.BlurSize = 1;
