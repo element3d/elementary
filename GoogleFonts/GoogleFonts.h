@@ -13,6 +13,7 @@ namespace GoogleFonts
 	E3_EXPORT std::string Montserrat();
 	E3_EXPORT std::string Oswald();
 	E3_EXPORT std::string Raleway();
+	E3_EXPORT std::string Roboto();
 	E3_EXPORT std::string RobotoCondensed();
 	E3_EXPORT std::string Rubik();
 
